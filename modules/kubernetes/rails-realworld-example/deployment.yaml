@@ -26,20 +26,6 @@ spec:
           ports:
             - name: http
               containerPort: 3000
-          readinessProbe:
-            httpGet:
-              path: /
-              port: http
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            failureThreshold: 3
-          livenessProbe:
-            httpGet:
-              path: /
-              port: http
-            initialDelaySeconds: 10
-            periodSeconds: 10
-            failureThreshold: 3
           env:
           - name: DB_HOST
             value: localhost
@@ -71,4 +57,4 @@ spec:
           - name: MYSQL_PASSWORD
             value: sample_password
           - name: MYSQL_ALLOW_EMPTY_PASSWORD
-            value: true
+            value: "'true'"

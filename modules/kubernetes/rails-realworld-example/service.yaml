@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: rails-realworld-example
+  namespace: default
+  labels:
+    app: rails-realworld-example
+spec:
+  selector:
+    app: rails-realworld-example
+  ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 3000
+  type: LoadBalancer
