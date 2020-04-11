@@ -7,3 +7,8 @@ variable "helm_tiller_sa_name" {
   type    = string
   default = "tiller"
 }
+
+variable "jenkins_chart_version" {
+  type    = string
+  default = "1.9.12"
+}
