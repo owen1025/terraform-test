@@ -23,6 +23,12 @@
 ```
 aws eks --region ap-northeast-2 --profile <your profile> update-kubeconfig --name eks-cluster
 ```
+### Run k8s objects
+```
+cd modules/kubernetes/rails-realworld-example
+kubectl apply -f .
+```
+해당 부분은 Terraform으로 iaC 되지 않았습니다. terraform k8s deployment resource 등을 보는 데 따로 template file(manifest)를 지원하고 있지 않아 시간이 오래 소요될 것 같아 부득이하게 manifest로 실행을 안내드립니다.
 ### get jenkins loadbalancer external ip
 ```
 kubectl get svc --namespace kube-system jenkins --template "{{ range (index .status.loadBalancer.ingress 0) }}{{ . }}{{ end }}"
