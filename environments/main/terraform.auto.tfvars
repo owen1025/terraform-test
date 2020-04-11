@@ -11,4 +11,7 @@ vpc_cidr_block_prefix = "10.0"
 #--------------------------------------------------------------
 # EKS variables
 #--------------------------------------------------------------
-cluster_name = "eks-cluster"
+cluster_name            = "eks-cluster"
+worker_desired_capacity = 1
+worker_min_size         = 1
+worker_max_size         = 2

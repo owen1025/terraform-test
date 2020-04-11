@@ -7,6 +7,10 @@ variable "tags" {
   type = map
 }
 
+variable "cluster_name" {
+  type = string
+}
+
 variable "cluster_version" {
   type    = string
   default = "1.14"
@@ -21,8 +25,7 @@ variable "private_subnets" {
 }
 
 variable "instance_type" {
-  type    = string
-  default = "t2.micro"
+  type = string
 }
 
 variable "desired_capacity" {
@@ -43,5 +46,6 @@ variable "worker_ami_name_filter" {
 }
 
 variable "worker_ami_owners" {
-  type = list(string)
+  type    = list(string)
+  default = ["602401143452"]
 }

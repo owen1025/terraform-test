@@ -15,9 +15,8 @@ resource "aws_launch_configuration" "eks_worker" {
   image_id                    = data.aws_ami.eks_worker.id
   instance_type               = var.instance_type
   name_prefix                 = "${local.worker_name}-"
-  security_grops              = [module.eks_worker_sg.this_security_group_id]
-  user_data_base64            = base64encode(local.eks_worker_userdata)
-  key_name                    = "meshdev_seoul_qa"
+  security_groups             = [module.eks_worker_sg.this_security_group_id]
+  user_data_base64            = base64encode(local.worker_userdata)
 
   lifecycle {
     create_before_destroy = true
