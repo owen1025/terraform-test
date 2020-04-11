@@ -10,7 +10,7 @@ resource "helm_release" "jenkins" {
   chart     = "stable/jenkins"
   version   = var.jenkins_chart_version
   values = [
-    "$file(\"templates/jenkins.yaml\")"
+    file("${path.module}/templates/jenkins.yaml")
   ]
 
   timeout = 600
